@@ -1,10 +1,9 @@
-# 📘 Ejemplo: Limpieza de datasets con OpenRefine
+# Ejemplo: Limpieza de datasets con OpenRefine
 
 Este ejemplo muestra el proceso de limpieza de un dataset con errores comunes utilizando OpenRefine.
 
----
 
-## 🔹 1. Importar el dataset
+## 1. Importar el dataset
 
 1. Abrir OpenRefine.
 2. Seleccionar **Create Project**.
@@ -13,11 +12,12 @@ Este ejemplo muestra el proceso de limpieza de un dataset con errores comunes ut
 5. Verificar la vista previa.
 6. Presionar **Create Project**.
 
-![Importar](01.png)
+![Importar](imagenes/01.png)
+![Importar](imagenes/02.png)
+![Importar](imagenes/03.png)
+![Clustering](imagenes/04.png)
 
----
-
-## 🔹 2. Exploración inicial
+## 2. Exploración inicial
 
 Se revisan las columnas del dataset:
 
@@ -33,11 +33,8 @@ Se identifican problemas como:
 - formatos inconsistentes
 - valores nulos
 
-![Exploración](02.png)
 
----
-
-## 🔹 3. Identificar duplicados
+## 3. Identificar duplicados
 
 1. En **Employee.Name**:
    - Click en ▼
@@ -45,11 +42,11 @@ Se identifican problemas como:
 
 2. Se observan nombres repetidos.
 
-![Duplicados](03.png)
+![Identificar](imagenes/05.png)
+![Identificar](imagenes/06.png)
 
----
 
-## 🔹 4. Agrupar valores similares (Clustering)
+## 4. Agrupar valores similares (Clustering)
 
 1. En la columna:
    - **Edit cells → Cluster and edit**
@@ -62,72 +59,76 @@ Se identifican problemas como:
    - **Merge selected & re-cluster**
    - o **Merge selected & close**
 
-![Clustering](05.png)
+![Agrupar](imagenes/07.png)
+![Agrupar](imagenes/08.png)
+![Agrupar](imagenes/09.png)
+![Agrupar](imagenes/10.png)
 
----
 
-## 🔹 5. Eliminar espacios innecesarios
+## 5. Eliminar espacios innecesarios
 
 1. En columnas de texto:
    - **Edit cells → Common transforms → Trim leading and trailing whitespace**
 
-![Trim](06.png)
+![Eliminar](imagenes/11.png)
 
----
 
-## 🔹 6. Limpiar valores numéricos (Salary)
+## 6. Limpiar valores numéricos (Salary)
 
 1. En **Salary**:
    - **Edit cells → Transform**
 
 2. Usar:
 
-------
+```grel
 value.replace("$","")
-------
+```
 
 3. Luego:
    - **Edit cells → Common transforms → To number**
 
-![Salary](07.png)
+![Limpiar](imagenes/12.png)
+![Limpiar](imagenes/13.png)
 
----
 
-## 🔹 7. Estandarizar fechas
+## 7. Estandarizar fechas
 
 1. En **Hire.Date**:
    - **Edit cells → Transform**
 
 2. Corregir separadores si es necesario:
 
-------
+```grel
 value.replace(".","-")
-------
+```
 
-------
+```grel
 value.replace("/","-")
-------
+```
 
 3. Convertir a fecha:
 
-👉 **Edit cells → Common transforms → To date**
+**Edit cells → Common transforms → To date**
 
-![Fechas](11.png)
+![Fechas](imagenes/14.png)
+![Fechas](imagenes/15.png)
+![Fechas](imagenes/16.png)
+![Fechas](imagenes/17.png)
+![Fechas](imagenes/18.png)
 
----
 
-## 🔹 8. Identificar valores nulos
+## 8. Identificar valores nulos
 
 1. En cualquier columna:
    - **Facet → Customized facets → Facet by blank**
 
 2. Analizar registros vacíos.
 
-![Nulos](21.png)
+![Nulos](imagenes/19.png)
+![Nulos](imagenes/20.png)
 
----
 
-## 🔹 9. Marcar registros (Flag rows)
+## 9. Marcar registros (Flag rows)
 
 1. Seleccionar filas relevantes.
 2. Aplicar:
@@ -135,34 +136,33 @@ value.replace("/","-")
 
 3. Filtrar por:
    - **Facet → Facet by flag**
+  
+![Marcar](imagenes/21.png)
+![Marcar](imagenes/22.png)
 
-![Flag](22.png)
 
----
-
-## 🔹 10. Filtrar registros marcados
+## 10. Filtrar registros marcados
 
 1. En el panel izquierdo:
    - Seleccionar **true**
 
 2. Se muestran solo los registros marcados.
 
-![Filtro Flag](23.png)
+![Filtrar](imagenes/23.png)
 
----
 
-## 🔹 11. Eliminar registros con menor calidad
+## 11. Eliminar registros con menor calidad
 
 1. Identificar registros incompletos.
 2. Aplicar:
 
-👉 **Edit rows → Remove matching rows**
+**Edit rows → Remove matching rows**
 
-![Eliminar](24.png)
+![Eliminar](imagenes/24.png)
+![Eliminar](imagenes/25.png)
 
----
 
-## 🔹 12. Eliminar duplicados automáticamente
+## 12. Eliminar duplicados automáticamente
 
 1. Ir a:
    - **Edit rows → Remove duplicate rows**
@@ -174,11 +174,11 @@ value.replace("/","-")
 
 3. Presionar **OK**
 
-![Remove duplicates](25.png)
+![Remove duplicates](imagenes/26.png)
+![Remove duplicates](imagenes/27.png)
 
----
 
-## 🔹 13. Validar resultados
+## 13. Validar resultados
 
 Verificar:
 
@@ -186,25 +186,23 @@ Verificar:
 - valores consistentes
 - ausencia de duplicados
 
-![Validación](26.png)
+![Validación](imagenes/28.png)
 
----
 
-## 🔹 14. Estandarizar valores de texto
+## 14. Estandarizar valores de texto
 
 Ejemplo en columna City:
 
 1. **Edit cells → Transform**
 
-------
+```grel
 value.replace("Mexico City","CDMX")
-------
+```
 
-![City](27.png)
+![City](imagenes/29.png)
 
----
 
-## 🔹 15. Resultado final
+## 15. Resultado final
 
 El dataset queda:
 
@@ -213,11 +211,10 @@ El dataset queda:
 - con formato uniforme
 - listo para análisis
 
-![Resultado](30.png)
+![Resultado](imagenes/30.png)
 
----
 
-## 🎯 Conclusión
+## Conclusión
 
 El proceso de limpieza de datos permitió corregir errores comunes como duplicados, valores nulos, inconsistencias en texto y formatos incorrectos. 
 
