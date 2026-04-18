@@ -4,7 +4,7 @@ Este ejemplo muestra el proceso de limpieza de un dataset con errores comunes ut
 
 ## 📥 Dataset
 
-👉 [⬇️ Descargar empleados_dirty.csv](/data/empleados_dirty.csv)
+👉 [⬇️ Descargar empleados_dirty.csv](data/empleados_dirty.csv)
 
 ## 1. Importar el dataset
 
