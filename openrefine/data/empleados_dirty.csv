@@ -1,0 +1,11 @@
+Employee.ID,Employee.Name,Department,Salary,Hire.Date,City
+101,Juan Perez,IT,15000,2021-01-10,Mexico City
+102,juan perez,IT,15000,10/01/2021,México City
+103,Ana Lopez,HR,12000,2020/05/12,Guadalajara
+104,Ana  Lopez,HR,,12-05-2020,Guadalajara 
+105,Carlos Ruiz,Finance,18000,2019-11-20,Monterrey
+106,Carlos Ruiz,Finance,18000,20/11/2019,Monterrey
+107,María Gómez,IT,$16000,2022-03-15,CDMX
+108,Maria Gomez,IT,16000,15.03.2022,CDMX
+109,Luis Torres,HR,13000,,Puebla
+110, Luis Torres ,HR,13000,2018-07-01,Puebla
