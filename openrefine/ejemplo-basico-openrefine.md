@@ -2,9 +2,9 @@
 
 Este ejemplo muestra el proceso de limpieza de un dataset con errores comunes utilizando OpenRefine.
 
-## 📥 Dataset
+## Dataset
 
-👉 [⬇️ Descargar empleados_dirty.csv](data/empleados_dirty.csv)
+[⬇️ Descargar empleados_dirty.csv](data/empleados_dirty.csv)
 
 ## 1. Importar el dataset
 
@@ -215,6 +215,11 @@ El dataset queda:
 - listo para análisis
 
 ![Resultado](imagenes/30.png)
+
+## 16. Exportar
+
+Para exportar en csv:
+![Exportar](imagenes/31.png)
 
 
 ## Conclusión
